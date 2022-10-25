@@ -1,1 +1,53 @@
+//https://onlinegdb.com/ZBklDY7L0
+/********************************************
+ * Автор: Рахимов С.О.                       *
+ * Дата: 25.10.2022                          *
+ * Название: Циклы с пред- и постусловием    *
+ ********************************************/
 
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <iomanip>
+
+
+using namespace std;
+
+int main() {
+  double C = pow(10, -6), U0 = 100, L = 10, R = pow(10, 4);
+  double Uc, Ul, a, B, W0;
+  
+  array < double, 9 > t {
+    0,
+    0.002,
+    0.004,
+    0.006,
+    0.008,
+    0.01,
+    0.02,
+    0.03,
+    0.04
+  };
+  
+  int count = 0;
+
+  a = R / (2 * L);
+  W0 = 1 / sqrt(L * C);
+  B = sqrt(pow(a, 2) - pow(W0, 2));
+
+  while (count < t.size()) {
+    
+    Uc = (U0 / (2 * B)) * (((a + B) * exp(-(a - B) * t[count])) - ((a - B) * exp(-(a + B) * t[count])));
+    Ul = (U0 / (2 * B)) * (((a - B) * exp(-(a - B) * t[count])) - ((a + B) * exp(-(a + B) * t[count])));
+    
+    cout << "t = " << left << setfill(' ') << setw(8) << double(t[count]) << "     ";
+    cout << "Uc = " << setfill(' ') << setw(8) << double(Uc) << "     ";
+    cout << "Ul = " << setfill(' ') << setw(8) << double(Ul) << endl;
+
+    ++count;
+
+  }
+
+  return 0;
+
+}
