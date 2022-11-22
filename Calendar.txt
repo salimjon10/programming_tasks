@@ -70,9 +70,6 @@
      current = k;
    }
 
-   return;
- }
-
  int main() {
    int year = 0;
 
@@ -86,34 +83,10 @@
    return 0;
  }
         
-        if (k);
-            cout<<endl;
-            
-        current = k;
-    }
-    
-       return;
-}
+        
 
-int main() {
-    system("cls");
-    
-    time_t ttime = time(0);
-    tm *local_time = localtime(&ttime);
-    
-    int year = 1900 + local_time->tm_year;
-    char option;
-    
-    while(true) {
-        system("cls");
-        cout << "year: ";
-        cin>>year;
-        printCalendar(year);
-    
-     
-    }
-    return 0;
-}
+
+
 
 
 
