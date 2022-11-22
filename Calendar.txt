@@ -1,4 +1,4 @@
-//https://onlinegdb.com/Tnh2qqFKA
+﻿//https://onlinegdb.com/Tnh2qqFKA
  /*******************************
 * Автор : Рахимов Салимджон     *
 * Дата : 14.11.2022             *
@@ -86,7 +86,7 @@ int main() {
      
     }
     return 0;
-    }
+}
 
 
 
