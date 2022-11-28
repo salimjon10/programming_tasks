@@ -1,1 +1,94 @@
+/https://onlinegdb.com/-V4mdxu8R
+/************************************ 
+* Автор:  Рахимов С.О               *
+* Вариант: 21                       *
+* Дата:  28.11.2022                 *
+* Название: Работа с файлами        * 
+************************************/ 
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+struct reports {
+	string   TV;
+	string  model;
+	string  diaganal;
+	string  amount;
+	string  price;
+ 
+};
+
+reports reportsList[100];
+
+void report(int i) {
+    cout << reportsList[i]. TV << ' ' << reportsList[i]. model << ' ' << reportsList[i]. diaganal << ' ' << reportsList[i]. amount << ' ' << reportsList[i]. price << ' ' <<   endl;
+}
+
+void print(string TV, int rowCount) {
+    for (int i = 1; i < rowCount; ++i) {
+        if (reportsList[i]. amount == TV) {
+            report(i);
+        }
+    }    
+}
+
+int mediumTime(string TV, int rowCount) {
+    int count = 0;
+    int sum = 0;
+    for (int i = 0; i < rowCount; ++i) {
+        if (reportsList[i]. amount ==TV) {
+            ++count;
+             
+        }
+    }
+    int medium;
+    medium = (sum / count);
+    return medium;
+}
+ 
+
+int main() {
+    fstream file;
+    file.open("text.txt");
+
+    if (!file.is_open()) {
+        cout << " Файл называется (my file.txt).\n";
+        return 0;
+    }
+
+    string str;
+    int rowCount = 0;
+    while (getline(file, str)) {
+        ++rowCount;
+    }
+    
+    file.close();
+    file.open("my file.txt");
+    
+    for (int i = 0; i < rowCount; ++i) { 
+        file >> reportsList[i]. TV;
+        file >> reportsList[i]. model;
+        file >> reportsList[i]. diaganal;
+        file >> reportsList[i]. amount;
+        file >> reportsList[i]. price;
+         
+    }
+    
+    string TV;
+    cout << " Введите модель телевизора: "; cin >>TV;
+    cout << endl;
+    print(TV, rowCount);
+    cout << endl << " Самая большая диагональ: " << TV << ": " << mediumTime( TV, rowCount) << endl;
+    
+    file.close();
+    return 0;
+}
+
+
+
+
+
 
