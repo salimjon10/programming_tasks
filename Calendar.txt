@@ -1,94 +1,96 @@
-﻿//https://onlinegdb.com/-ZjAxdAyM
- /*******************************
-  * Автор : Рахимов Салимджон     *
-  * Дата : 14.11.2022             *
-  * Название : Календарь          *
-  ********************************/
+﻿//https://onlinegdb.com/iDvDEtEOa
+/*********************************
+ * Автор : Рахимов Салимджон     *
+ * Дата : 30.11.2022             *
+ * Название : Календарь          *
+ ********************************/
 
- #include <iostream>
- #include <iomanip>
- #include <conio.h>
- #include <time.h>
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+#include <time.h>
 
- using namespace std;
+using namespace std;
 
- void printCalendar(int year) {
-   int mDays[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-   string monthList[] = {
-     "January",
-     "February",
-     "March",
-     "April",
-     "May",
-     "June",
-     "July",
-     "August",
-     "September",
-     "October",
-     "November",
-     "Desember"
-   };
+void printCalendar(int year)
+{
+    int mDays = 20;
 
-   cout << "++++++++++++++++++++++++++++++++++++" << endl;
-   cout << "         Calendar - " << year << endl;
-   cout << "++++++++++++++++++++++++++++++++++++" << endl << endl;
-   int days;
-   int current;
+    string monthList[] = {
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "Desember"
+    };
 
-   int y = year - 1;
-   current = (y + y / 4 - y / 100 + y / 400 + 1) % 7;
+    cout << "++++++++++++++++++++++++++++++++++++" << endl;
+    cout << "         Calendar - " << year << endl;
+    cout << "++++++++++++++++++++++++++++++++++++" << endl
+         << endl;
+    int days;
+    int current;
 
-   for (int i = 0; i < 12; i++) {
-     if (i == 1)
-       if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
-         days = 29;
-       else
-         days = mDays[i];
-     else
-       days = mDays[i];
+    int y = year - 1;
+    current = (y + y / 4 - y / 100 + y / 400 + 1) % 6;
 
-     cout << endl << "*-*-*-*-*-*-*-" << monthList[i] << "*-*-*-*-*-*-*-*" << endl;
+    for (int i = 0; i < 12; i++) {
+        if (i == 1)
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+                days = 20;
+            else
+                days = mDays;
+        else
+            days = mDays;
 
-     cout << "  Sun  Mon  Tue  Wed  Thu  Fri  Sat" << endl;
+        cout << endl
+             << "*-*-*-*-*-*-*-" << monthList[i] << "*-*-*-*-*-* " << endl;
 
-     int k;
-     for (k = 0; k < current; k++)
-       cout << "    ";
+        cout << "  Mon  Tue  Wed  Thu  Fri Sat" << endl;
 
-     for (int j = 1; j <= days; j++) {
-       k++;
-       cout << setw(5) << j;
-       if (k > 6) {
-         k = 0;
-         cout << endl;
-       }
-     }
+        int k;
+        for (k = 0; k < current; ++k)
+            cout << "    ";
 
-     if (k);
-     cout << endl;
+        for (int j = 1; j <= days; ++j) {
+            ++k;
+            cout << setw(5) << j;
+            if (k > 5) {
+                k = 0;
+                cout << endl;
+            }
+        }
 
-     current = k;
-   }
+        if (k)
 
- int main() {
-   int year = 0;
+            cout << endl;
 
-   while (true) {
-     cout << "year: ";
-     cin >> year;
-     system("clear");
-     printCalendar(year);
+        current = k;
+    }
 
-   }
-   return 0;
- }
-        
-        
+    return;
+}
 
+int main()
+{
+    int year = 0;
 
+    while (true) {
+        cout << "year: ";
+        cin >> year;
 
+        system("clear");
 
+        cout << "year : " << year << endl;
 
-
-
-
+        printCalendar(year);
+    }
+    return 0;
+}
