@@ -1,6 +1,7 @@
-﻿/********************************
+//https://onlinegdb.com/iDvDEtEOa
+/*********************************
  * Автор : Рахимов Салимджон     *
- * Дата : 14.11.2022             *
+ * Дата : 30.11.2022             *
  * Название : Календарь          *
  ********************************/
 
@@ -60,17 +61,16 @@ void printCalendar(int year)
 
         for (int j = 1; j <= days; ++j) {
             ++k;
-            cout << setw(4) << j;
-            if (k > 6) {
+            cout << setw(5) << j;
+            if (k > 5) {
                 k = 0;
                 cout << endl;
             }
         }
 
         if (k)
-            ;
-        cout << endl;
 
+            cout << endl;
         current = k;
     }
 
@@ -92,4 +92,6 @@ int main()
         printCalendar(year);
     }
     return 0;
+
 }
+
