@@ -1,4 +1,4 @@
-﻿//https://onlinegdb.com/iDvDEtEOa
+//https://onlinegdb.com/iDvDEtEOa
 /*********************************
  * Автор : Рахимов Салимджон     *
  * Дата : 30.11.2022             *
@@ -71,7 +71,6 @@ void printCalendar(int year)
         if (k)
 
             cout << endl;
-
         current = k;
     }
 
@@ -93,4 +92,6 @@ int main()
         printCalendar(year);
     }
     return 0;
+
 }
+
