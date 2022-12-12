@@ -1,4 +1,4 @@
-//https://onlinegdb.com/iDvDEtEOa
+//https://onlinegdb.com/iDvDEtEOa 
 /*********************************
  * Автор : Рахимов Салимджон     *
  * Дата : 30.11.2022             *
@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <conio.h>
 #include <time.h>
+
 
 using namespace std;
 
