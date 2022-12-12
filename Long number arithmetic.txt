@@ -1,1 +1,51 @@
+//https://onlinegdb.com/7pzO6xr8mh
+/************************** 
+ *  Автор : Рахимов С.О   *
+ *  Дата: 12.12.2022      * 
+ *  Название:  Калькулятор*
+ *************************/
+#include <iostream>
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	double a, b, c;
+	char d;
+	int p = 1;
+
+	while (p != 2)
+	{
+		printf("1 - Калькулятор\n2 -   выход\n");
+		scanf("%d", &p);
+
+		if (p != 1) break;
+
+		printf("  введите а,  арифметические действия (+, -, *, /) ,  введите b\n");
+		scanf("%lf%c%lf", &a, &d, &b);
+
+		while (getchar() != '\n');
+		switch (d)
+		{
+			case '+':
+				c = a + b;
+				break;
+			case '-':
+				c = a - b;
+				break;
+			case '*':
+				c = a * b;
+				break;
+			case '/':
+				c = a / b;
+				break;
+
+			default:
+				printf("   ошибка\n");
+				continue;
+		}
+
+		printf("  ответ: c = %lf\n", c);
+	}
+}
 
